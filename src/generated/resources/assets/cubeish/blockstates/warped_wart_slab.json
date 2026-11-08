@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "cubeish:block/warped_wart_slab"
+    },
+    "type=double": {
+      "model": "cubeish:block/warped_wart_slab_double"
+    },
+    "type=top": {
+      "model": "cubeish:block/warped_wart_slab_top"
+    }
+  }
+}

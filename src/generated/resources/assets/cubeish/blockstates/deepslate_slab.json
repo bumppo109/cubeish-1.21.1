@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "cubeish:block/deepslate_slab"
+    },
+    "type=double": {
+      "model": "cubeish:block/deepslate_slab_double"
+    },
+    "type=top": {
+      "model": "cubeish:block/deepslate_slab_top"
+    }
+  }
+}

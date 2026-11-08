@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "cubeish:block/basalt_slab"
+    },
+    "type=double": {
+      "model": "cubeish:block/basalt_slab_double"
+    },
+    "type=top": {
+      "model": "cubeish:block/basalt_slab_top"
+    }
+  }
+}

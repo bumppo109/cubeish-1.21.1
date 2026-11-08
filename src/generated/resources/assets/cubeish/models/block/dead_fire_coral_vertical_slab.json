@@ -1,0 +1,6 @@
+{
+  "parent": "cubeish:block/template/vertical_slab/base_all",
+  "textures": {
+    "texture": "minecraft:block/dead_fire_coral_block"
+  }
+}

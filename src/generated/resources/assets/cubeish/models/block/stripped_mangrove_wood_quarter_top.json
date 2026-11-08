@@ -1,0 +1,6 @@
+{
+  "parent": "cubeish:block/template/quarter/top_all",
+  "textures": {
+    "texture": "minecraft:block/stripped_mangrove_log"
+  }
+}

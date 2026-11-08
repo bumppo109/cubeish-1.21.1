@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "cubeish:block/horn_coral_slab"
+    },
+    "type=double": {
+      "model": "cubeish:block/horn_coral_slab_double"
+    },
+    "type=top": {
+      "model": "cubeish:block/horn_coral_slab_top"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:acacia_log"
+  },
+  "result": {
+    "count": 1,
+    "id": "cubeish:acacia_wood_vertical_corner"
+  }
+}

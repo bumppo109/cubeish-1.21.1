@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "cubeish:block/crimson_nylium_slab"
+    },
+    "type=double": {
+      "model": "cubeish:block/crimson_nylium_slab_double"
+    },
+    "type=top": {
+      "model": "cubeish:block/crimson_nylium_slab_top"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "cubeish:block/template/quarter/bottom_all",
+  "textures": {
+    "texture": "minecraft:block/white_glazed_terracotta"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "cubeish:block/emerald_slab"
+    },
+    "type=double": {
+      "model": "cubeish:block/emerald_slab_double"
+    },
+    "type=top": {
+      "model": "cubeish:block/emerald_slab_top"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "cubeish:block/template/vertical_quarter/left_all",
+  "textures": {
+    "texture": "minecraft:block/diorite"
+  }
+}

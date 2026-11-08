@@ -1,0 +1,6 @@
+{
+  "parent": "cubeish:block/template/corner_slab/bottom_left_all",
+  "textures": {
+    "texture": "minecraft:block/purple_glazed_terracotta"
+  }
+}

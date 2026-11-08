@@ -1,0 +1,6 @@
+{
+  "parent": "cubeish:block/template/vertical_corner/right_all",
+  "textures": {
+    "texture": "minecraft:block/light_gray_wool"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "cubeish:block/template/quarter/top_all",
+  "textures": {
+    "texture": "minecraft:block/magma"
+  }
+}

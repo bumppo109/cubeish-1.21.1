@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "cubeish:block/yellow_stained_glass_slab"
+    },
+    "type=double": {
+      "model": "cubeish:block/yellow_stained_glass_slab_double"
+    },
+    "type=top": {
+      "model": "cubeish:block/yellow_stained_glass_slab_top"
+    }
+  }
+}

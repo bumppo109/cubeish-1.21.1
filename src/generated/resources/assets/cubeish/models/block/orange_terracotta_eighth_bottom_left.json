@@ -1,0 +1,6 @@
+{
+  "parent": "cubeish:block/template/eighth/bottom_left_all",
+  "textures": {
+    "texture": "minecraft:block/orange_terracotta"
+  }
+}

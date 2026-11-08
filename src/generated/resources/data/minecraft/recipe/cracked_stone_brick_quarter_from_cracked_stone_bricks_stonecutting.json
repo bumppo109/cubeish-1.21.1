@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:cracked_stone_bricks"
+  },
+  "result": {
+    "count": 4,
+    "id": "cubeish:cracked_stone_brick_quarter"
+  }
+}

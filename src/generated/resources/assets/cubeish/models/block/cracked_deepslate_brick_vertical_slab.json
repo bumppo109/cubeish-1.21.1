@@ -1,0 +1,6 @@
+{
+  "parent": "cubeish:block/template/vertical_slab/base_all",
+  "textures": {
+    "texture": "minecraft:block/cracked_deepslate_bricks"
+  }
+}

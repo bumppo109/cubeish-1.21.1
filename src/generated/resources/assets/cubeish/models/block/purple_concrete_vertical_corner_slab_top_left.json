@@ -1,0 +1,6 @@
+{
+  "parent": "cubeish:block/template/vertical_corner_slab/top_left_all",
+  "textures": {
+    "texture": "minecraft:block/purple_concrete"
+  }
+}

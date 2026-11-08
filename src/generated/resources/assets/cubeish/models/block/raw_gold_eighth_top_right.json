@@ -1,0 +1,6 @@
+{
+  "parent": "cubeish:block/template/eighth/top_right_all",
+  "textures": {
+    "texture": "minecraft:block/raw_gold_block"
+  }
+}

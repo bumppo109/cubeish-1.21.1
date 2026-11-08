@@ -1,0 +1,256 @@
+
+{
+  "priority": 500,
+  "add": {
+    "/(?<ns>[^:]+):(?<wood>.+)_log/": [
+      "${ns}:${wood}_wood",
+      "wilderwild:hollowed_${wood}_log",
+      "quark:hollow_${wood}_log",
+      "everycomp:q/${ns}/hollow_${wood}_log"
+    ],
+
+    "/(?<ns>[^:]+):(?<wood>.*wood.*)_log/": [
+      "${ns}:${wood}"
+    ],
+
+    "/(?<ns>[^:]+):(?<stem>.+?)_planks/": {
+      "shapes": [
+        "${ns}:${stem}_slab",
+        "${ns}:${stem}_stairs",
+        "${ns}:${stem}_wall",
+        "${ns}:${stem}_vertical_slab",
+        "${ns}:${stem}_quarter",
+        "${ns}:${stem}_vertical_quarter",
+        "${ns}:${stem}_corner_slab",
+        "${ns}:${stem}_vertical_corner_slab",
+        "${ns}:${stem}_vertical_corner",
+        "${ns}:${stem}_eighth",
+        "${ns}:spiked_${stem}"
+      ],
+      "conditions": {
+        "is_blockitem": true
+      }
+    },
+
+    "/(?<ns>[^:]+):(?<stem>.+?)_block/": {
+      "shapes": [
+        "${ns}:${stem}_slab",
+        "${ns}:${stem}_stairs",
+        "${ns}:${stem}_wall",
+        "${ns}:${stem}_vertical_slab",
+        "${ns}:${stem}_quarter",
+        "${ns}:${stem}_vertical_quarter",
+        "${ns}:${stem}_corner_slab",
+        "${ns}:${stem}_vertical_corner_slab",
+        "${ns}:${stem}_vertical_corner",
+        "${ns}:${stem}_eighth"
+      ],
+      "conditions": {
+        "is_blockitem": true,
+        "not": {
+          "exists": [
+            "${ns}:${stem}_planks"
+          ]
+        }
+      }
+    },
+
+    "/minecraft:(?<color>.+)_stained_glass/": {
+      "shapes": [
+        "/(?!minecraft:)[^:]+:${color}_stained_glass_slab/",
+        "/(?!minecraft:)[^:]+:${color}_stained_glass_stairs/",
+        "/(?!minecraft:)[^:]+:${color}_stained_glass_wall/",
+        "/(?!minecraft:)[^:]+:${color}_stained_glass_vertical_slab/",
+        "/(?!minecraft:)[^:]+:${color}_stained_glass_quarter/",
+        "/(?!minecraft:)[^:]+:${color}_stained_glass_vertical_quarter/",
+        "/(?!minecraft:)[^:]+:${color}_stained_glass_corner_slab/",
+        "/(?!minecraft:)[^:]+:${color}_stained_glass_vertical_corner_slab/",
+        "/(?!minecraft:)[^:]+:${color}_stained_glass_vertical_corner/",
+        "/(?!minecraft:)[^:]+:${color}_stained_glass_eighth/"
+      ],
+      "conditions": {
+        "is_blockitem": true
+      }
+    },
+
+
+    "/minecraft:(?<glass>glass|tinted_glass)/": {
+      "shapes": [
+        "/(?!minecraft:)[^:]+:${glass}_slab/",
+        "/(?!minecraft:)[^:]+:${glass}_stairs/",
+        "/(?!minecraft:)[^:]+:${glass}_wall/",
+        "/(?!minecraft:)[^:]+:${glass}_vertical_slab/",
+        "/(?!minecraft:)[^:]+:${glass}_quarter/",
+        "/(?!minecraft:)[^:]+:${glass}_vertical_quarter/",
+        "/(?!minecraft:)[^:]+:${glass}_corner_slab/",
+        "/(?!minecraft:)[^:]+:${glass}_vertical_corner_slab/",
+        "/(?!minecraft:)[^:]+:${glass}_vertical_corner/",
+        "/(?!minecraft:)[^:]+:${glass}_eighth/"
+      ],
+      "conditions": {
+        "is_blockitem": true
+      }
+    },
+
+
+    "/minecraft:dead_(?<coral>.+?)_coral_block/": {
+      "shapes": [
+        "/(?!minecraft:)[^:]+:dead_${coral}_coral_slab/",
+        "/(?!minecraft:)[^:]+:dead_${coral}_coral_stairs/",
+        "/(?!minecraft:)[^:]+:dead_${coral}_coral_wall/"
+      ],
+      "conditions": {
+        "is_blockitem": true
+      }
+    },
+
+    "/(?<ns>[^:]+):(?!(?:.*)_(?:vertical_corner_slab|vertical_corner|vertical_quarter|vertical_slab|corner_slab|vertical|quarter|eighth|stairs|slab|wall)$)(?<stem>.+?)(?<end>s|)/": {
+      "shapes": [
+        "${ns}:${stem}_slab",
+        "${ns}:${stem}_stairs",
+        "${ns}:${stem}_wall",
+        "${ns}:${stem}_vertical_slab",
+        "${ns}:${stem}_quarter",
+        "${ns}:${stem}_vertical_quarter",
+        "${ns}:${stem}_corner_slab",
+        "${ns}:${stem}_vertical_corner_slab",
+        "${ns}:${stem}_vertical_corner",
+        "${ns}:${stem}_eighth",
+
+        "${ns}:${stem}${end}_slab",
+        "${ns}:${stem}${end}_stairs",
+        "${ns}:${stem}${end}_wall",
+
+        "${ns}:spiked_${stem}",
+        "${ns}:spiked_${stem}${end}"
+      ],
+      "conditions": {
+        "is_blockitem": true,
+        "none_of": [
+          {
+            "exists": [
+              "${ns}:${stem}_planks"
+            ]
+          },
+          {
+            "exists": [
+              "${ns}:${stem}_block"
+            ]
+          },
+          {
+            "exists": [
+              "${ns}:${stem}_stained_glass"
+            ]
+          }
+        ]
+      }
+    },
+
+    "/minecraft:(?<stem>.+?)_planks/": {
+      "shapes": [
+        "/(?!minecraft:)[^:]+:${stem}_slab/",
+        "/(?!minecraft:)[^:]+:${stem}_stairs/",
+        "/(?!minecraft:)[^:]+:${stem}_wall/",
+        "/(?!minecraft:)[^:]+:${stem}_vertical_slab/",
+        "/(?!minecraft:)[^:]+:${stem}_quarter/",
+        "/(?!minecraft:)[^:]+:${stem}_vertical_quarter/",
+        "/(?!minecraft:)[^:]+:${stem}_corner_slab/",
+        "/(?!minecraft:)[^:]+:${stem}_vertical_corner_slab/",
+        "/(?!minecraft:)[^:]+:${stem}_vertical_corner/",
+        "/(?!minecraft:)[^:]+:${stem}_eighth/"
+      ],
+      "conditions": {
+        "is_blockitem": true
+      }
+    },
+
+    "/minecraft:(?<stem>.+?)_block/": {
+      "shapes": [
+        "/(?!minecraft:)[^:]+:${stem}_slab/",
+        "/(?!minecraft:)[^:]+:${stem}_stairs/",
+        "/(?!minecraft:)[^:]+:${stem}_wall/",
+        "/(?!minecraft:)[^:]+:${stem}_vertical_slab/",
+        "/(?!minecraft:)[^:]+:${stem}_quarter/",
+        "/(?!minecraft:)[^:]+:${stem}_vertical_quarter/",
+        "/(?!minecraft:)[^:]+:${stem}_corner_slab/",
+        "/(?!minecraft:)[^:]+:${stem}_vertical_corner_slab/",
+        "/(?!minecraft:)[^:]+:${stem}_vertical_corner/",
+        "/(?!minecraft:)[^:]+:${stem}_eighth/"
+      ],
+      "conditions": {
+        "is_blockitem": true,
+        "not": {
+          "exists": [
+            "/[^:]+:${stem}_planks/"
+          ]
+        }
+      }
+    },
+
+    "/minecraft:(?<stem>.+?)(?<end>s|)/": {
+      "shapes": [
+        "/(?!minecraft:)[^:]+:${stem}_slab/",
+        "/(?!minecraft:)[^:]+:${stem}_stairs/",
+        "/(?!minecraft:)[^:]+:${stem}_wall/",
+        "/(?!minecraft:)[^:]+:${stem}_vertical_slab/",
+        "/(?!minecraft:)[^:]+:${stem}_quarter/",
+        "/(?!minecraft:)[^:]+:${stem}_vertical_quarter/",
+        "/(?!minecraft:)[^:]+:${stem}_corner_slab/",
+        "/(?!minecraft:)[^:]+:${stem}_vertical_corner_slab/",
+        "/(?!minecraft:)[^:]+:${stem}_vertical_corner/",
+        "/(?!minecraft:)[^:]+:${stem}_eighth/",
+
+        "/(?!minecraft:)[^:]+:${stem}${end}_slab/",
+        "/(?!minecraft:)[^:]+:${stem}${end}_stairs/",
+        "/(?!minecraft:)[^:]+:${stem}${end}_wall/"
+      ],
+      "conditions": {
+        "is_blockitem": true,
+        "none_of": [
+          {
+            "exists": [
+              "/[^:]+:${stem}_planks/"
+            ]
+          },
+          {
+            "exists": [
+              "/[^:]+:${stem}_block/"
+            ]
+          }
+        ]
+      }
+    },
+
+    "/(?<ns>[^:]+):stripped_(?<wood>.+?)_palisade/": [
+      "${ns}:stripped_spiked_${wood}_palisade"
+    ],
+
+    "/(?<ns>[^:]+):(?<stem>.+?)(?<!_vertical)(?<!_corner)_slab/": [
+      "${ns}:${stem}_vertical_slab",
+      "${ns}:vertical_${stem}_slab"
+    ],
+
+    "/(?<ns>[^:]+):(?<stem>.+)_stairs/": [
+      "${ns}:${stem}_quarter"
+    ],
+
+    "/(?<ns>[^:]+):(?<wood>.+)_stem/": [
+      "${ns}:${wood}_hyphae",
+      "quark:hollow_${wood}_stem",
+      "wilderwild:hollowed_${wood}_stem",
+      "everycomp:q/${ns}/hollow_${wood}_stem",
+      "everycomp:q/${ns}/hollow_${wood}_log"
+    ]
+  },
+
+  "remove": {
+    "#clutternomore:shape_map_blacklist": [
+      "/.*/"
+    ],
+    "/.*/": [
+      "/[^:]+:copycat.*/",
+      "#clutternomore:shape_map_blacklist",
+      "/clutternomore:.*/"
+    ]
+  }
+}

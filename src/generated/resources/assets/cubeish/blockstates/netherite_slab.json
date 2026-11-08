@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "cubeish:block/netherite_slab"
+    },
+    "type=double": {
+      "model": "cubeish:block/netherite_slab_double"
+    },
+    "type=top": {
+      "model": "cubeish:block/netherite_slab_top"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,hinge=left": {
+      "model": "cubeish:block/calcite_vertical_quarter_left",
+      "y": 90
+    },
+    "facing=east,hinge=right": {
+      "model": "cubeish:block/calcite_vertical_quarter_right",
+      "y": 90
+    },
+    "facing=north,hinge=left": {
+      "model": "cubeish:block/calcite_vertical_quarter_left"
+    },
+    "facing=north,hinge=right": {
+      "model": "cubeish:block/calcite_vertical_quarter_right"
+    },
+    "facing=south,hinge=left": {
+      "model": "cubeish:block/calcite_vertical_quarter_left",
+      "y": 180
+    },
+    "facing=south,hinge=right": {
+      "model": "cubeish:block/calcite_vertical_quarter_right",
+      "y": 180
+    },
+    "facing=west,hinge=left": {
+      "model": "cubeish:block/calcite_vertical_quarter_left",
+      "y": 270
+    },
+    "facing=west,hinge=right": {
+      "model": "cubeish:block/calcite_vertical_quarter_right",
+      "y": 270
+    }
+  }
+}

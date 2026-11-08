@@ -1,0 +1,6 @@
+{
+  "parent": "cubeish:block/template/eighth/top_left_all",
+  "textures": {
+    "texture": "minecraft:block/brown_wool"
+  }
+}

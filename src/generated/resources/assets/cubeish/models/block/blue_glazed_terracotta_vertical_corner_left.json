@@ -1,0 +1,6 @@
+{
+  "parent": "cubeish:block/template/vertical_corner/left_all",
+  "textures": {
+    "texture": "minecraft:block/blue_glazed_terracotta"
+  }
+}

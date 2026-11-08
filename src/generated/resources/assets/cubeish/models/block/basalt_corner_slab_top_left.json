@@ -1,0 +1,6 @@
+{
+  "parent": "cubeish:block/template/corner_slab/top_left_all",
+  "textures": {
+    "texture": "minecraft:block/basalt_side"
+  }
+}

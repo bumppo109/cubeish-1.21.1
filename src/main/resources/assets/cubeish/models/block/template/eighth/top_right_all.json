@@ -1,0 +1,11 @@
+{
+  "parent": "cubeish:block/template/eighth/top_right",
+  "textures": {
+    "north": "#texture",
+    "south": "#texture",
+    "east": "#texture",
+    "west": "#texture",
+    "up": "#texture",
+    "down": "#texture"
+  }
+}

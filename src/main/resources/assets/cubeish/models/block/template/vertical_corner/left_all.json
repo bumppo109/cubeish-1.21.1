@@ -1,0 +1,11 @@
+{
+  "parent": "cubeish:block/template/vertical_corner/left",
+  "textures": {
+    "north": "#texture",
+    "south": "#texture",
+    "east": "#texture",
+    "west": "#texture",
+    "up": "#texture",
+    "down": "#texture"
+  }
+}

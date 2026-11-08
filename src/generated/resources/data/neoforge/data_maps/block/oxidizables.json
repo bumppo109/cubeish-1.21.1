@@ -1,0 +1,292 @@
+{
+  "values": {
+    "cubeish:chiseled_copper_corner_slab": {
+      "next_oxidation_stage": "cubeish:exposed_chiseled_copper_corner_slab"
+    },
+    "cubeish:chiseled_copper_eighth": {
+      "next_oxidation_stage": "cubeish:exposed_chiseled_copper_eighth"
+    },
+    "cubeish:chiseled_copper_quarter": {
+      "next_oxidation_stage": "cubeish:exposed_chiseled_copper_quarter"
+    },
+    "cubeish:chiseled_copper_slab": {
+      "next_oxidation_stage": "cubeish:exposed_chiseled_copper_slab"
+    },
+    "cubeish:chiseled_copper_stairs": {
+      "next_oxidation_stage": "cubeish:exposed_chiseled_copper_stairs"
+    },
+    "cubeish:chiseled_copper_vertical_corner": {
+      "next_oxidation_stage": "cubeish:exposed_chiseled_copper_vertical_corner"
+    },
+    "cubeish:chiseled_copper_vertical_corner_slab": {
+      "next_oxidation_stage": "cubeish:exposed_chiseled_copper_vertical_corner_slab"
+    },
+    "cubeish:chiseled_copper_vertical_quarter": {
+      "next_oxidation_stage": "cubeish:exposed_chiseled_copper_vertical_quarter"
+    },
+    "cubeish:chiseled_copper_vertical_slab": {
+      "next_oxidation_stage": "cubeish:exposed_chiseled_copper_vertical_slab"
+    },
+    "cubeish:chiseled_copper_wall": {
+      "next_oxidation_stage": "cubeish:exposed_chiseled_copper_wall"
+    },
+    "cubeish:copper_corner_slab": {
+      "next_oxidation_stage": "cubeish:exposed_copper_corner_slab"
+    },
+    "cubeish:copper_eighth": {
+      "next_oxidation_stage": "cubeish:exposed_copper_eighth"
+    },
+    "cubeish:copper_grate_corner_slab": {
+      "next_oxidation_stage": "cubeish:exposed_copper_grate_corner_slab"
+    },
+    "cubeish:copper_grate_eighth": {
+      "next_oxidation_stage": "cubeish:exposed_copper_grate_eighth"
+    },
+    "cubeish:copper_grate_quarter": {
+      "next_oxidation_stage": "cubeish:exposed_copper_grate_quarter"
+    },
+    "cubeish:copper_grate_slab": {
+      "next_oxidation_stage": "cubeish:exposed_copper_grate_slab"
+    },
+    "cubeish:copper_grate_stairs": {
+      "next_oxidation_stage": "cubeish:exposed_copper_grate_stairs"
+    },
+    "cubeish:copper_grate_vertical_corner": {
+      "next_oxidation_stage": "cubeish:exposed_copper_grate_vertical_corner"
+    },
+    "cubeish:copper_grate_vertical_corner_slab": {
+      "next_oxidation_stage": "cubeish:exposed_copper_grate_vertical_corner_slab"
+    },
+    "cubeish:copper_grate_vertical_quarter": {
+      "next_oxidation_stage": "cubeish:exposed_copper_grate_vertical_quarter"
+    },
+    "cubeish:copper_grate_vertical_slab": {
+      "next_oxidation_stage": "cubeish:exposed_copper_grate_vertical_slab"
+    },
+    "cubeish:copper_grate_wall": {
+      "next_oxidation_stage": "cubeish:exposed_copper_grate_wall"
+    },
+    "cubeish:copper_quarter": {
+      "next_oxidation_stage": "cubeish:exposed_copper_quarter"
+    },
+    "cubeish:copper_slab": {
+      "next_oxidation_stage": "cubeish:exposed_copper_slab"
+    },
+    "cubeish:copper_stairs": {
+      "next_oxidation_stage": "cubeish:exposed_copper_stairs"
+    },
+    "cubeish:copper_vertical_corner": {
+      "next_oxidation_stage": "cubeish:exposed_copper_vertical_corner"
+    },
+    "cubeish:copper_vertical_corner_slab": {
+      "next_oxidation_stage": "cubeish:exposed_copper_vertical_corner_slab"
+    },
+    "cubeish:copper_vertical_quarter": {
+      "next_oxidation_stage": "cubeish:exposed_copper_vertical_quarter"
+    },
+    "cubeish:copper_vertical_slab": {
+      "next_oxidation_stage": "cubeish:exposed_copper_vertical_slab"
+    },
+    "cubeish:copper_wall": {
+      "next_oxidation_stage": "cubeish:exposed_copper_wall"
+    },
+    "cubeish:cut_copper_slab": {
+      "next_oxidation_stage": "cubeish:exposed_cut_copper_slab"
+    },
+    "cubeish:cut_copper_stairs": {
+      "next_oxidation_stage": "cubeish:exposed_cut_copper_stairs"
+    },
+    "cubeish:exposed_chiseled_copper_corner_slab": {
+      "next_oxidation_stage": "cubeish:weathered_chiseled_copper_corner_slab"
+    },
+    "cubeish:exposed_chiseled_copper_eighth": {
+      "next_oxidation_stage": "cubeish:weathered_chiseled_copper_eighth"
+    },
+    "cubeish:exposed_chiseled_copper_quarter": {
+      "next_oxidation_stage": "cubeish:weathered_chiseled_copper_quarter"
+    },
+    "cubeish:exposed_chiseled_copper_slab": {
+      "next_oxidation_stage": "cubeish:weathered_chiseled_copper_slab"
+    },
+    "cubeish:exposed_chiseled_copper_stairs": {
+      "next_oxidation_stage": "cubeish:weathered_chiseled_copper_stairs"
+    },
+    "cubeish:exposed_chiseled_copper_vertical_corner": {
+      "next_oxidation_stage": "cubeish:weathered_chiseled_copper_vertical_corner"
+    },
+    "cubeish:exposed_chiseled_copper_vertical_corner_slab": {
+      "next_oxidation_stage": "cubeish:weathered_chiseled_copper_vertical_corner_slab"
+    },
+    "cubeish:exposed_chiseled_copper_vertical_quarter": {
+      "next_oxidation_stage": "cubeish:weathered_chiseled_copper_vertical_quarter"
+    },
+    "cubeish:exposed_chiseled_copper_vertical_slab": {
+      "next_oxidation_stage": "cubeish:weathered_chiseled_copper_vertical_slab"
+    },
+    "cubeish:exposed_chiseled_copper_wall": {
+      "next_oxidation_stage": "cubeish:weathered_chiseled_copper_wall"
+    },
+    "cubeish:exposed_copper_corner_slab": {
+      "next_oxidation_stage": "cubeish:weathered_copper_corner_slab"
+    },
+    "cubeish:exposed_copper_eighth": {
+      "next_oxidation_stage": "cubeish:weathered_copper_eighth"
+    },
+    "cubeish:exposed_copper_grate_corner_slab": {
+      "next_oxidation_stage": "cubeish:weathered_copper_grate_corner_slab"
+    },
+    "cubeish:exposed_copper_grate_eighth": {
+      "next_oxidation_stage": "cubeish:weathered_copper_grate_eighth"
+    },
+    "cubeish:exposed_copper_grate_quarter": {
+      "next_oxidation_stage": "cubeish:weathered_copper_grate_quarter"
+    },
+    "cubeish:exposed_copper_grate_slab": {
+      "next_oxidation_stage": "cubeish:weathered_copper_grate_slab"
+    },
+    "cubeish:exposed_copper_grate_stairs": {
+      "next_oxidation_stage": "cubeish:weathered_copper_grate_stairs"
+    },
+    "cubeish:exposed_copper_grate_vertical_corner": {
+      "next_oxidation_stage": "cubeish:weathered_copper_grate_vertical_corner"
+    },
+    "cubeish:exposed_copper_grate_vertical_corner_slab": {
+      "next_oxidation_stage": "cubeish:weathered_copper_grate_vertical_corner_slab"
+    },
+    "cubeish:exposed_copper_grate_vertical_quarter": {
+      "next_oxidation_stage": "cubeish:weathered_copper_grate_vertical_quarter"
+    },
+    "cubeish:exposed_copper_grate_vertical_slab": {
+      "next_oxidation_stage": "cubeish:weathered_copper_grate_vertical_slab"
+    },
+    "cubeish:exposed_copper_grate_wall": {
+      "next_oxidation_stage": "cubeish:weathered_copper_grate_wall"
+    },
+    "cubeish:exposed_copper_quarter": {
+      "next_oxidation_stage": "cubeish:weathered_copper_quarter"
+    },
+    "cubeish:exposed_copper_slab": {
+      "next_oxidation_stage": "cubeish:weathered_copper_slab"
+    },
+    "cubeish:exposed_copper_stairs": {
+      "next_oxidation_stage": "cubeish:weathered_copper_stairs"
+    },
+    "cubeish:exposed_copper_vertical_corner": {
+      "next_oxidation_stage": "cubeish:weathered_copper_vertical_corner"
+    },
+    "cubeish:exposed_copper_vertical_corner_slab": {
+      "next_oxidation_stage": "cubeish:weathered_copper_vertical_corner_slab"
+    },
+    "cubeish:exposed_copper_vertical_quarter": {
+      "next_oxidation_stage": "cubeish:weathered_copper_vertical_quarter"
+    },
+    "cubeish:exposed_copper_vertical_slab": {
+      "next_oxidation_stage": "cubeish:weathered_copper_vertical_slab"
+    },
+    "cubeish:exposed_copper_wall": {
+      "next_oxidation_stage": "cubeish:weathered_copper_wall"
+    },
+    "cubeish:exposed_cut_copper_slab": {
+      "next_oxidation_stage": "cubeish:weathered_cut_copper_slab"
+    },
+    "cubeish:exposed_cut_copper_stairs": {
+      "next_oxidation_stage": "cubeish:weathered_cut_copper_stairs"
+    },
+    "cubeish:weathered_chiseled_copper_corner_slab": {
+      "next_oxidation_stage": "cubeish:oxidized_chiseled_copper_corner_slab"
+    },
+    "cubeish:weathered_chiseled_copper_eighth": {
+      "next_oxidation_stage": "cubeish:oxidized_chiseled_copper_eighth"
+    },
+    "cubeish:weathered_chiseled_copper_quarter": {
+      "next_oxidation_stage": "cubeish:oxidized_chiseled_copper_quarter"
+    },
+    "cubeish:weathered_chiseled_copper_slab": {
+      "next_oxidation_stage": "cubeish:oxidized_chiseled_copper_slab"
+    },
+    "cubeish:weathered_chiseled_copper_stairs": {
+      "next_oxidation_stage": "cubeish:oxidized_chiseled_copper_stairs"
+    },
+    "cubeish:weathered_chiseled_copper_vertical_corner": {
+      "next_oxidation_stage": "cubeish:oxidized_chiseled_copper_vertical_corner"
+    },
+    "cubeish:weathered_chiseled_copper_vertical_corner_slab": {
+      "next_oxidation_stage": "cubeish:oxidized_chiseled_copper_vertical_corner_slab"
+    },
+    "cubeish:weathered_chiseled_copper_vertical_quarter": {
+      "next_oxidation_stage": "cubeish:oxidized_chiseled_copper_vertical_quarter"
+    },
+    "cubeish:weathered_chiseled_copper_vertical_slab": {
+      "next_oxidation_stage": "cubeish:oxidized_chiseled_copper_vertical_slab"
+    },
+    "cubeish:weathered_chiseled_copper_wall": {
+      "next_oxidation_stage": "cubeish:oxidized_chiseled_copper_wall"
+    },
+    "cubeish:weathered_copper_corner_slab": {
+      "next_oxidation_stage": "cubeish:oxidized_copper_corner_slab"
+    },
+    "cubeish:weathered_copper_eighth": {
+      "next_oxidation_stage": "cubeish:oxidized_copper_eighth"
+    },
+    "cubeish:weathered_copper_grate_corner_slab": {
+      "next_oxidation_stage": "cubeish:oxidized_copper_grate_corner_slab"
+    },
+    "cubeish:weathered_copper_grate_eighth": {
+      "next_oxidation_stage": "cubeish:oxidized_copper_grate_eighth"
+    },
+    "cubeish:weathered_copper_grate_quarter": {
+      "next_oxidation_stage": "cubeish:oxidized_copper_grate_quarter"
+    },
+    "cubeish:weathered_copper_grate_slab": {
+      "next_oxidation_stage": "cubeish:oxidized_copper_grate_slab"
+    },
+    "cubeish:weathered_copper_grate_stairs": {
+      "next_oxidation_stage": "cubeish:oxidized_copper_grate_stairs"
+    },
+    "cubeish:weathered_copper_grate_vertical_corner": {
+      "next_oxidation_stage": "cubeish:oxidized_copper_grate_vertical_corner"
+    },
+    "cubeish:weathered_copper_grate_vertical_corner_slab": {
+      "next_oxidation_stage": "cubeish:oxidized_copper_grate_vertical_corner_slab"
+    },
+    "cubeish:weathered_copper_grate_vertical_quarter": {
+      "next_oxidation_stage": "cubeish:oxidized_copper_grate_vertical_quarter"
+    },
+    "cubeish:weathered_copper_grate_vertical_slab": {
+      "next_oxidation_stage": "cubeish:oxidized_copper_grate_vertical_slab"
+    },
+    "cubeish:weathered_copper_grate_wall": {
+      "next_oxidation_stage": "cubeish:oxidized_copper_grate_wall"
+    },
+    "cubeish:weathered_copper_quarter": {
+      "next_oxidation_stage": "cubeish:oxidized_copper_quarter"
+    },
+    "cubeish:weathered_copper_slab": {
+      "next_oxidation_stage": "cubeish:oxidized_copper_slab"
+    },
+    "cubeish:weathered_copper_stairs": {
+      "next_oxidation_stage": "cubeish:oxidized_copper_stairs"
+    },
+    "cubeish:weathered_copper_vertical_corner": {
+      "next_oxidation_stage": "cubeish:oxidized_copper_vertical_corner"
+    },
+    "cubeish:weathered_copper_vertical_corner_slab": {
+      "next_oxidation_stage": "cubeish:oxidized_copper_vertical_corner_slab"
+    },
+    "cubeish:weathered_copper_vertical_quarter": {
+      "next_oxidation_stage": "cubeish:oxidized_copper_vertical_quarter"
+    },
+    "cubeish:weathered_copper_vertical_slab": {
+      "next_oxidation_stage": "cubeish:oxidized_copper_vertical_slab"
+    },
+    "cubeish:weathered_copper_wall": {
+      "next_oxidation_stage": "cubeish:oxidized_copper_wall"
+    },
+    "cubeish:weathered_cut_copper_slab": {
+      "next_oxidation_stage": "cubeish:oxidized_cut_copper_slab"
+    },
+    "cubeish:weathered_cut_copper_stairs": {
+      "next_oxidation_stage": "cubeish:oxidized_cut_copper_stairs"
+    }
+  }
+}

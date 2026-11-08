@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:stripped_acacia_log"
+  },
+  "result": {
+    "count": 4,
+    "id": "cubeish:stripped_acacia_wood_vertical_quarter"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "cubeish:block/template/vertical_corner_slab/top_right_all",
+  "textures": {
+    "texture": "minecraft:block/light_gray_stained_glass"
+  }
+}

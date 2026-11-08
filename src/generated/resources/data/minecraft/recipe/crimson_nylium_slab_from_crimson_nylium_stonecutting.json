@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:crimson_nylium"
+  },
+  "result": {
+    "count": 2,
+    "id": "cubeish:crimson_nylium_slab"
+  }
+}
