@@ -137,7 +137,7 @@ dependencies {
     runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
 
     //Clutter No More 3.1.0
-    implementation "curse.maven:clutternomore-1339454:9348860"
+    //implementation "curse.maven:clutternomore-1339454:9348860"
 
     //Polytone 1.21-5.3.6
     //implementation "curse.maven:polytone-958094:9497731"
