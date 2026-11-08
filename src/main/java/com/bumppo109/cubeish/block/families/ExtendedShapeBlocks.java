@@ -10,6 +10,15 @@ import java.util.function.Supplier;
 
 public enum ExtendedShapeBlocks
 {
+    GLOWSTONE(() -> Blocks.GLOWSTONE, false, false, false),
+    SEA_LANTERN(() -> Blocks.SEA_LANTERN, false, false, false),
+    SHROOMLIGHT(() -> Blocks.SHROOMLIGHT, false, false, false),
+    HONEYCOMB(() -> Blocks.HONEYCOMB_BLOCK, false, false, false),
+
+    OCHRE_FROGLIGHT(() -> Blocks.OCHRE_FROGLIGHT, false, false, false),
+    PEARLESCENT_FROGLIGHT(() -> Blocks.PEARLESCENT_FROGLIGHT, false, false, false),
+    VERDANT_FROGLIGHT(() -> Blocks.VERDANT_FROGLIGHT, false, false, false),
+
     PRISMARINE(() -> Blocks.PRISMARINE, true, true, true),
     PRISMARINE_BRICKS(() -> Blocks.PRISMARINE_BRICKS, true, true, false),
     DARK_PRISMARINE(() -> Blocks.DARK_PRISMARINE, true, true, false),
@@ -58,6 +67,13 @@ public enum ExtendedShapeBlocks
     NETHER_WART(() -> Blocks.NETHER_WART_BLOCK, false, false, false),
     WARPED_WART(() -> Blocks.WARPED_WART_BLOCK, false, false, false),
 
+    BROWN_MUSHROOM(() -> Blocks.BROWN_MUSHROOM_BLOCK, false, false, false),
+    RED_MUSHROOM(() -> Blocks.RED_MUSHROOM_BLOCK, false, false, false),
+    MUSHROOM_STEM(() -> Blocks.MUSHROOM_STEM, false, false, false),
+
+    WARPED_STEM(() -> Blocks.WARPED_STEM, false, false, false, ExtendedShapeCategory.WOOD),
+    CRIMSON_STEM(() -> Blocks.CRIMSON_STEM, false, false, false, ExtendedShapeCategory.WOOD),
+
     SNOW(() -> Blocks.SNOW_BLOCK, false, false, false),
 
     OBSIDIAN(() -> Blocks.OBSIDIAN, false, false, false),
@@ -74,6 +90,10 @@ public enum ExtendedShapeBlocks
     MYCELIUM(() -> Blocks.MYCELIUM, false, false, false, ExtendedShapeCategory.LANDSCAPE),
     WARPED_NYLIUM(() -> Blocks.WARPED_NYLIUM, false, false, false, ExtendedShapeCategory.LANDSCAPE),
     CRIMSON_NYLIUM(() -> Blocks.CRIMSON_NYLIUM, false, false, false, ExtendedShapeCategory.LANDSCAPE),
+    CLAY(() -> Blocks.CLAY, false, false, false, ExtendedShapeCategory.LANDSCAPE),
+
+    MOSS(() -> Blocks.MOSS_BLOCK, false, false, false, ExtendedShapeCategory.LANDSCAPE),
+    DRIED_KELP(() -> Blocks.DRIED_KELP_BLOCK, false, false, false),
 
     SOUL_SOIL(() -> Blocks.SOUL_SOIL, false, false, false, ExtendedShapeCategory.LANDSCAPE),
 
@@ -87,6 +107,7 @@ public enum ExtendedShapeBlocks
     MOSSY_STONE_BRICKS(() -> Blocks.MOSSY_STONE_BRICKS, true, true, true),
 
     DEEPSLATE(() -> Blocks.DEEPSLATE, false, false, false),
+    REINFORCED_DEEPSLATE(() -> Blocks.REINFORCED_DEEPSLATE, false, false, false),
     CHISELED_DEEPSLATE(() -> Blocks.CHISELED_DEEPSLATE, false, false, false, ExtendedShapeCategory.CARVED),
     CRACKED_DEEPSLATE_BRICKS(() -> Blocks.CRACKED_DEEPSLATE_BRICKS, false, false, false),
     CRACKED_DEEPSLATE_TILES(() -> Blocks.CRACKED_DEEPSLATE_TILES, false, false, false),

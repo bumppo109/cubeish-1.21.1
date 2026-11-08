@@ -50,10 +50,18 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
             });
         });
 
-        ModBlocks.MAGMA.forEach((block, blockTypeIdMap) -> {
-            blockTypeIdMap.forEach((blockType, blockId) -> {
+        ModBlocks.FRICTION.forEach((block, blockIdMap) -> {
+            blockIdMap.forEach(((blockType, blockId) -> {
                 dropSelf(blockId.get());
-            });
+            }));
+        });
+
+        ModBlocks.MAGMA.forEach((block, blockId) -> {
+            dropSelf(blockId.get());
+        });
+
+        ModBlocks.ICE.forEach((blockType, blockId) -> {
+            dropSelf(blockId.get());
         });
 
         ModBlocks.WOODS.forEach((modWood, blockTypeIdMap) -> {
@@ -66,7 +74,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
             });
         });
 
-        ModBlocks.WEATHERING_METALS.forEach((metal, weatheringMap) -> {
+        ModBlocks.WEATHERING_BLOCKS.forEach((metal, weatheringMap) -> {
             weatheringMap.forEach((weatheringState, waxingMap) -> {
                 waxingMap.forEach((waxingState, extendedShapeIdMap) -> {
                     extendedShapeIdMap.forEach(((extendedShape, blockId) -> {
@@ -121,10 +129,18 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
             });
         });
 
-        ModBlocks.MAGMA.forEach((block, blockTypeIdMap) -> {
-            blockTypeIdMap.forEach((blockType, blockId) -> {
+        ModBlocks.FRICTION.forEach((block, blockIdMap) -> {
+            blockIdMap.forEach(((blockType, blockId) -> {
                 knownBlocks.add(blockId.get());
-            });
+            }));
+        });
+
+        ModBlocks.MAGMA.forEach((block, blockId) -> {
+            knownBlocks.add(blockId.get());
+        });
+
+        ModBlocks.ICE.forEach((blockType, blockId) -> {
+            knownBlocks.add(blockId.get());
         });
 
         ModBlocks.WOODS.forEach((modWood, blockTypeIdMap) -> {
@@ -133,7 +149,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
             });
         });
 
-        ModBlocks.WEATHERING_METALS.forEach((metal, weatheringMap) -> {
+        ModBlocks.WEATHERING_BLOCKS.forEach((metal, weatheringMap) -> {
             weatheringMap.forEach((weatheringState, waxingMap) -> {
                 waxingMap.forEach((waxingState, extendedShapeIdMap) -> {
                     extendedShapeIdMap.forEach(((extendedShape, blockId) -> {

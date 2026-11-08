@@ -1,0 +1,6 @@
+{
+  "targets": [
+    "cubeish:grass_slab"
+  ],
+  "colormap": "minecraft:grass_color"
+}

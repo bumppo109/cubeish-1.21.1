@@ -1,6 +1,0 @@
-{
-  "parent": "cubeish:block/template/quarter/top_all",
-  "textures": {
-    "texture": "minecraft:block/basalt_side"
-  }
-}

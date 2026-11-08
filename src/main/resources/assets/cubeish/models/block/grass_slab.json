@@ -1,0 +1,6 @@
+{
+  "parent": "cubeish:block/template/slab/tint_all",
+  "textures": {
+    "texture": "minecraft:block/grass_block_top"
+  }
+}

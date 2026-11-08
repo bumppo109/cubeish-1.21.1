@@ -1,8 +1,9 @@
+
 package com.bumppo109.cubeish.block.families;
 
 import com.bumppo109.cubeish.block.ExtendedShape;
 import com.bumppo109.cubeish.block.WaxingState;
-import com.bumppo109.cubeish.block.WeatheringState;
+import com.bumppo109.cubeish.block.WeatheredShape;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
@@ -14,70 +15,70 @@ public enum Weathering {
 
     COPPER(
             Map.of(
-                    WeatheringState.UNAFFECTED, Blocks.COPPER_BLOCK,
-                    WeatheringState.EXPOSED, Blocks.EXPOSED_COPPER,
-                    WeatheringState.WEATHERED, Blocks.WEATHERED_COPPER,
-                    WeatheringState.OXIDIZED, Blocks.OXIDIZED_COPPER
+                    WeatheringCopper.WeatherState.UNAFFECTED, Blocks.COPPER_BLOCK,
+                    WeatheringCopper.WeatherState.EXPOSED, Blocks.EXPOSED_COPPER,
+                    WeatheringCopper.WeatherState.WEATHERED, Blocks.WEATHERED_COPPER,
+                    WeatheringCopper.WeatherState.OXIDIZED, Blocks.OXIDIZED_COPPER
             ),
             Map.of(
-                    WeatheringState.UNAFFECTED, Blocks.WAXED_COPPER_BLOCK,
-                    WeatheringState.EXPOSED, Blocks.WAXED_EXPOSED_COPPER,
-                    WeatheringState.WEATHERED, Blocks.WAXED_WEATHERED_COPPER,
-                    WeatheringState.OXIDIZED, Blocks.WAXED_OXIDIZED_COPPER
+                    WeatheringCopper.WeatherState.UNAFFECTED, Blocks.WAXED_COPPER_BLOCK,
+                    WeatheringCopper.WeatherState.EXPOSED, Blocks.WAXED_EXPOSED_COPPER,
+                    WeatheringCopper.WeatherState.WEATHERED, Blocks.WAXED_WEATHERED_COPPER,
+                    WeatheringCopper.WeatherState.OXIDIZED, Blocks.WAXED_OXIDIZED_COPPER
             )
     ),
 
     CUT_COPPER(
             Map.of(
-                    WeatheringState.UNAFFECTED, Blocks.CUT_COPPER,
-                    WeatheringState.EXPOSED, Blocks.EXPOSED_CUT_COPPER,
-                    WeatheringState.WEATHERED, Blocks.WEATHERED_CUT_COPPER,
-                    WeatheringState.OXIDIZED, Blocks.OXIDIZED_CUT_COPPER
+                    WeatheringCopper.WeatherState.UNAFFECTED, Blocks.CUT_COPPER,
+                    WeatheringCopper.WeatherState.EXPOSED, Blocks.EXPOSED_CUT_COPPER,
+                    WeatheringCopper.WeatherState.WEATHERED, Blocks.WEATHERED_CUT_COPPER,
+                    WeatheringCopper.WeatherState.OXIDIZED, Blocks.OXIDIZED_CUT_COPPER
             ),
             Map.of(
-                    WeatheringState.UNAFFECTED, Blocks.WAXED_CUT_COPPER,
-                    WeatheringState.EXPOSED, Blocks.WAXED_EXPOSED_CUT_COPPER,
-                    WeatheringState.WEATHERED, Blocks.WAXED_WEATHERED_CUT_COPPER,
-                    WeatheringState.OXIDIZED, Blocks.WAXED_OXIDIZED_CUT_COPPER
+                    WeatheringCopper.WeatherState.UNAFFECTED, Blocks.WAXED_CUT_COPPER,
+                    WeatheringCopper.WeatherState.EXPOSED, Blocks.WAXED_EXPOSED_CUT_COPPER,
+                    WeatheringCopper.WeatherState.WEATHERED, Blocks.WAXED_WEATHERED_CUT_COPPER,
+                    WeatheringCopper.WeatherState.OXIDIZED, Blocks.WAXED_OXIDIZED_CUT_COPPER
             )
     ),
 
     CHISELED_COPPER(
             Map.of(
-                    WeatheringState.UNAFFECTED, Blocks.CHISELED_COPPER,
-                    WeatheringState.EXPOSED, Blocks.EXPOSED_CHISELED_COPPER,
-                    WeatheringState.WEATHERED, Blocks.WEATHERED_CHISELED_COPPER,
-                    WeatheringState.OXIDIZED, Blocks.OXIDIZED_CHISELED_COPPER
+                    WeatheringCopper.WeatherState.UNAFFECTED, Blocks.CHISELED_COPPER,
+                    WeatheringCopper.WeatherState.EXPOSED, Blocks.EXPOSED_CHISELED_COPPER,
+                    WeatheringCopper.WeatherState.WEATHERED, Blocks.WEATHERED_CHISELED_COPPER,
+                    WeatheringCopper.WeatherState.OXIDIZED, Blocks.OXIDIZED_CHISELED_COPPER
             ),
             Map.of(
-                    WeatheringState.UNAFFECTED, Blocks.WAXED_CHISELED_COPPER,
-                    WeatheringState.EXPOSED, Blocks.WAXED_EXPOSED_CHISELED_COPPER,
-                    WeatheringState.WEATHERED, Blocks.WAXED_WEATHERED_CHISELED_COPPER,
-                    WeatheringState.OXIDIZED, Blocks.WAXED_OXIDIZED_CHISELED_COPPER
+                    WeatheringCopper.WeatherState.UNAFFECTED, Blocks.WAXED_CHISELED_COPPER,
+                    WeatheringCopper.WeatherState.EXPOSED, Blocks.WAXED_EXPOSED_CHISELED_COPPER,
+                    WeatheringCopper.WeatherState.WEATHERED, Blocks.WAXED_WEATHERED_CHISELED_COPPER,
+                    WeatheringCopper.WeatherState.OXIDIZED, Blocks.WAXED_OXIDIZED_CHISELED_COPPER
             )
     ),
 
     COPPER_GRATE(
             Map.of(
-                    WeatheringState.UNAFFECTED, Blocks.COPPER_GRATE,
-                    WeatheringState.EXPOSED, Blocks.EXPOSED_COPPER_GRATE,
-                    WeatheringState.WEATHERED, Blocks.WEATHERED_COPPER_GRATE,
-                    WeatheringState.OXIDIZED, Blocks.OXIDIZED_COPPER_GRATE
+                    WeatheringCopper.WeatherState.UNAFFECTED, Blocks.COPPER_GRATE,
+                    WeatheringCopper.WeatherState.EXPOSED, Blocks.EXPOSED_COPPER_GRATE,
+                    WeatheringCopper.WeatherState.WEATHERED, Blocks.WEATHERED_COPPER_GRATE,
+                    WeatheringCopper.WeatherState.OXIDIZED, Blocks.OXIDIZED_COPPER_GRATE
             ),
             Map.of(
-                    WeatheringState.UNAFFECTED, Blocks.WAXED_COPPER_GRATE,
-                    WeatheringState.EXPOSED, Blocks.WAXED_EXPOSED_COPPER_GRATE,
-                    WeatheringState.WEATHERED, Blocks.WAXED_WEATHERED_COPPER_GRATE,
-                    WeatheringState.OXIDIZED, Blocks.WAXED_OXIDIZED_COPPER_GRATE
+                    WeatheringCopper.WeatherState.UNAFFECTED, Blocks.WAXED_COPPER_GRATE,
+                    WeatheringCopper.WeatherState.EXPOSED, Blocks.WAXED_EXPOSED_COPPER_GRATE,
+                    WeatheringCopper.WeatherState.WEATHERED, Blocks.WAXED_WEATHERED_COPPER_GRATE,
+                    WeatheringCopper.WeatherState.OXIDIZED, Blocks.WAXED_OXIDIZED_COPPER_GRATE
             )
     );
 
-    private final Map<WeatheringState, Block> unwaxedBlocks;
-    private final Map<WeatheringState, Block> waxedBlocks;
+    private final Map<WeatheringCopper.WeatherState, Block> unwaxedBlocks;
+    private final Map<WeatheringCopper.WeatherState, Block> waxedBlocks;
 
     Weathering(
-            Map<WeatheringState, Block> unwaxedBlocks,
-            Map<WeatheringState, Block> waxedBlocks
+            Map<WeatheringCopper.WeatherState, Block> unwaxedBlocks,
+            Map<WeatheringCopper.WeatherState, Block> waxedBlocks
     ) {
         this.unwaxedBlocks = new EnumMap<>(unwaxedBlocks);
         this.waxedBlocks = new EnumMap<>(waxedBlocks);
@@ -87,20 +88,23 @@ public enum Weathering {
         return name().toLowerCase(Locale.ROOT);
     }
 
-    public Block getBase(WeatheringState state, WaxingState waxing) {
+    public Block getBase(
+            WeatheringCopper.WeatherState state,
+            WaxingState waxing
+    ) {
         return (waxing.isWaxed() ? waxedBlocks : unwaxedBlocks).get(state);
     }
 
-    public Block getBase(WeatheringState state) {
+    public Block getBase(WeatheringCopper.WeatherState state) {
         return unwaxedBlocks.get(state);
     }
 
-    public Block getWaxedBase(WeatheringState state) {
+    public Block getWaxedBase(WeatheringCopper.WeatherState state) {
         return waxedBlocks.get(state);
     }
 
     public BlockBehaviour.Properties properties(
-            WeatheringState state,
+            WeatheringCopper.WeatherState state,
             WaxingState waxing
     ) {
         return BlockBehaviour.Properties.ofFullCopy(getBase(state, waxing));
@@ -108,9 +112,9 @@ public enum Weathering {
 
     public static String metalName(
             Weathering metal,
-            WeatheringState state,
+            WeatheringCopper.WeatherState state,
             WaxingState waxing,
-            ExtendedShape shape
+            WeatheredShape shape
     ) {
         StringBuilder name = new StringBuilder();
 
@@ -118,32 +122,33 @@ public enum Weathering {
             name.append("waxed_");
         }
 
-        if (state != WeatheringState.UNAFFECTED) {
+        if (state != WeatheringCopper.WeatherState.UNAFFECTED) {
             name.append(state.getSerializedName()).append("_");
         }
 
         name.append(metal.getSerializedName());
 
-        if (shape != ExtendedShape.BLOCK) {
+        if (shape != null) {
             name.append("_").append(shape.getSerializedName());
         }
 
         return name.toString();
     }
 
-    public boolean canCreate(ExtendedShape shape) {
-        if (this.equals(CUT_COPPER)) {
-            return shape.equals(ExtendedShape.SLAB) || shape.equals(ExtendedShape.STAIRS);
+    public boolean canCreate(WeatheredShape shape) {
+        if (this == CUT_COPPER) {
+            return shape != WeatheredShape.SLAB
+                    && shape != WeatheredShape.STAIRS;
         }
 
-        return shape != ExtendedShape.BLOCK;
+        return true;
     }
 
     public record WeatheringAsset(
             Weathering metal,
-            WeatheringState state,
+            WeatheringCopper.WeatherState state,
             WaxingState waxing,
-            ExtendedShape shape
+            WeatheredShape shape
     ) {
 
         public Block getBase() {

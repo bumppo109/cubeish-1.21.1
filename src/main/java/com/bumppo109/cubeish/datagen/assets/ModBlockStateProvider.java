@@ -5,6 +5,8 @@ import com.bumppo109.cubeish.block.*;
 import com.bumppo109.cubeish.assetdata.BlockAsset;
 import com.bumppo109.cubeish.assetdata.BlockAssets;
 import com.bumppo109.cubeish.assetdata.BlockTextureSlot;
+import com.bumppo109.cubeish.block.families.ExtendedShapeBlocks;
+import com.bumppo109.cubeish.block.families.Friction;
 import com.bumppo109.cubeish.block.shapes.base.*;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -29,19 +31,37 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         ModBlocks.MISC_BLOCKS.forEach((block, blockTypeIdMap) -> {
             blockTypeIdMap.forEach((blockType, blockId) -> {
-                BlockAsset blockAsset = block.getBase() == null ? BlockAssets.get(ModBlocks.MISC_BLOCKS.get(block).get(ExtendedShape.BLOCK).get())
-                        : BlockAssets.get(block.getBase().get());
+                if (!block.equals(ExtendedShapeBlocks.GRASS)) {
+                    BlockAsset blockAsset = block.getBase() == null ? BlockAssets.get(ModBlocks.MISC_BLOCKS.get(block).get(ExtendedShape.BLOCK).get())
+                            : BlockAssets.get(block.getBase().get());
 
-                switchBlockType(blockType, blockId.get(), blockAsset.textures().get(BlockTextureSlot.SIDE));
+                    ResourceLocation texture = switch (block) {
+                        case DIRT_PATH, PODZOL, MYCELIUM, WARPED_NYLIUM, CRIMSON_NYLIUM -> blockAsset.textures().get(BlockTextureSlot.TOP);
+                        default -> blockAsset.textures().get(BlockTextureSlot.SIDE);
+                    };
+
+                    switchBlockType(blockType, blockId.get(), texture);
+                }
             });
         });
 
-        ModBlocks.MAGMA.forEach((block, blockTypeIdMap) -> {
-            blockTypeIdMap.forEach((blockType, blockId) -> {
-                ResourceLocation texture = ResourceLocation.withDefaultNamespace("block/magma");
+        ModBlocks.MAGMA.forEach((blockType, blockId) -> {
+            ResourceLocation texture = ResourceLocation.withDefaultNamespace("block/magma");
+
+            switchBlockType(blockType, blockId.get(), texture);
+        });
+
+        ModBlocks.ICE.forEach((blockType, blockId) -> {
+            ResourceLocation texture = ResourceLocation.withDefaultNamespace("block/ice");
+
+            switchBlockType(blockType, blockId.get(), texture);
+        });
+
+        ModBlocks.FRICTION.forEach((block, blockIdMap) -> {
+            blockIdMap.forEach(((blockType, blockId) -> {
+                ResourceLocation texture = BlockAssets.get(block.getBase().get()).textures().get(BlockTextureSlot.SIDE);
 
                 switch (blockType) {
-                    case BLOCK -> cubeAll(blockId.get(), texture);
                     case SLAB -> slabWithItem(blockId.get(), texture);
                     case STAIRS -> stairsWithItem(blockId.get(), texture);
                     case WALL -> wallWithItem(blockId.get(), texture);
@@ -54,7 +74,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
                     case VERTICAL_CORNER -> verticalCornerWithItem(blockId.get(), texture);
                     case EIGHTH -> eighthBlockWithItem(blockId.get(), texture);
                 }
-            });
+            }));
         });
 
         ModBlocks.COLORED_BLOCKS.forEach((block, colorMap) -> {
@@ -90,7 +110,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
             });
         });
 
-        ModBlocks.WEATHERING_METALS.forEach((metal, weatheringMap) -> {
+        ModBlocks.WEATHERING_BLOCKS.forEach((metal, weatheringMap) -> {
             weatheringMap.forEach((weatheredState, WaxMap) -> {
                 WaxMap.forEach((type, shapeMap) -> {
                     shapeMap.forEach(((extendedShape, blockId) -> {
@@ -158,6 +178,46 @@ public class ModBlockStateProvider extends BlockStateProvider {
     ) {
         switch (blockType) {
             case BLOCK -> cubeAll(block, texture);
+            case SLAB -> slabWithItem(block, texture);
+            case STAIRS -> stairsWithItem(block, texture);
+            case WALL -> wallWithItem(block, texture);
+
+            case VERTICAL_SLAB -> verticalSlabWithItem(block, texture);
+            case QUARTER -> quarterWithItem(block, texture);
+            case VERTICAL_QUARTER -> verticalQuarterWithItem(block, texture);
+            case CORNER_SLAB -> cornerSlabWithItem(block, texture);
+            case VERTICAL_CORNER_SLAB -> verticalCornerSlabWithItem(block, texture);
+            case VERTICAL_CORNER -> verticalCornerWithItem(block, texture);
+            case EIGHTH -> eighthBlockWithItem(block, texture);
+        }
+    }
+
+    private void switchBlockType(
+            MagmaShape blockType,
+            Block block,
+            ResourceLocation texture
+    ) {
+        switch (blockType) {
+            case SLAB -> slabWithItem(block, texture);
+            case STAIRS -> stairsWithItem(block, texture);
+            case WALL -> wallWithItem(block, texture);
+
+            case VERTICAL_SLAB -> verticalSlabWithItem(block, texture);
+            case QUARTER -> quarterWithItem(block, texture);
+            case VERTICAL_QUARTER -> verticalQuarterWithItem(block, texture);
+            case CORNER_SLAB -> cornerSlabWithItem(block, texture);
+            case VERTICAL_CORNER_SLAB -> verticalCornerSlabWithItem(block, texture);
+            case VERTICAL_CORNER -> verticalCornerWithItem(block, texture);
+            case EIGHTH -> eighthBlockWithItem(block, texture);
+        }
+    }
+
+    private void switchBlockType(
+            IceShape blockType,
+            Block block,
+            ResourceLocation texture
+    ) {
+        switch (blockType) {
             case SLAB -> slabWithItem(block, texture);
             case STAIRS -> stairsWithItem(block, texture);
             case WALL -> wallWithItem(block, texture);

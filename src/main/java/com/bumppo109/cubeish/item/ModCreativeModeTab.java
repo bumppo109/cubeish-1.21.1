@@ -36,10 +36,17 @@ public class ModCreativeModeTab {
                             });
                         });
 
-                        ModBlocks.MAGMA.forEach((block, blockTypeIdMap) -> {
+                        ModBlocks.FRICTION.forEach((block, blockTypeIdMap) -> {
                             blockTypeIdMap.forEach((blockType, blockId) -> {
                                 output.accept(blockId);
                             });
+                        });
+
+                        ModBlocks.MAGMA.forEach((shape, blockId) -> {
+                            output.accept(blockId);
+                        });
+                        ModBlocks.ICE.forEach((shape, blockId) -> {
+                            output.accept(blockId);
                         });
 
                         ModBlocks.WOODS.forEach((modWood, blockTypeIdMap) -> {
@@ -48,7 +55,7 @@ public class ModCreativeModeTab {
                             });
                         });
 
-                        ModBlocks.WEATHERING_METALS.forEach((metal, weatheredState) -> {
+                        ModBlocks.WEATHERING_BLOCKS.forEach((metal, weatheredState) -> {
                             weatheredState.forEach((shape, waxState) -> {
                                 waxState.forEach((type, shapeMap) -> {
                                     shapeMap.forEach(((extendedShape, blockId) -> {

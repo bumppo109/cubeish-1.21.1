@@ -2,7 +2,9 @@
   "required": true,
   "package": "com.bumppo109.cubeish.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [],
+  "mixins": [
+    "EntityMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   },

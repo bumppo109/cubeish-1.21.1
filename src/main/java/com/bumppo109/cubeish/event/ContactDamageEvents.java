@@ -1,3 +1,4 @@
+
 package com.bumppo109.cubeish.event;
 
 import com.bumppo109.cubeish.Cubeish;
@@ -11,6 +12,6 @@ public class ContactDamageEvents {
 
     @SubscribeEvent
     public static void onEntityTick(EntityTickEvent.Post event) {
-        ContactDamageHandler.checkOuterContact(event.getEntity());
+        ContactDamageHandler.checkContact(event.getEntity());
     }
 }

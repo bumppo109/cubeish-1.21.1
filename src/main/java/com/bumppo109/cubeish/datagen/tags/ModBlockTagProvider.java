@@ -4,7 +4,7 @@ import com.bumppo109.cubeish.Cubeish;
 import com.bumppo109.cubeish.block.*;
 import com.bumppo109.cubeish.block.families.Coral;
 import com.bumppo109.cubeish.block.families.Flammable;
-import com.bumppo109.cubeish.block.families.Magma;
+import com.bumppo109.cubeish.block.families.Friction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -22,17 +22,17 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
 
-        ModBlocks.WEATHERING_METALS.forEach((metal, weatheringStateMap) -> {
+        ModBlocks.WEATHERING_BLOCKS.forEach((metal, weatheringStateMap) -> {
             weatheringStateMap.forEach((weatheringState, waxMap) -> {
                 waxMap.forEach((waxingState, shapeIdMap) -> {
                     shapeIdMap.forEach(((extendedShape, blockId) -> {
                         if (shapeIdMap.containsKey(extendedShape)) {
                             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(blockId.get());
 
-                            if(extendedShape.equals(ExtendedShape.WALL)) {
+                            if(extendedShape.equals(WeatheredShape.WALL)) {
                                 tag(BlockTags.WALLS).add(blockId.get());
                             }
-                            if(extendedShape.equals(ExtendedShape.STAIRS)) {
+                            if(extendedShape.equals(WeatheredShape.STAIRS)) {
                                 tag(BlockTags.STAIRS).add(blockId.get());
                             }
                         }
@@ -88,15 +88,33 @@ public class ModBlockTagProvider extends BlockTagsProvider {
             });
         });
 
-        ModBlocks.MAGMA.forEach((block, blockTypeIdMap) -> {
+        ModBlocks.FRICTION.forEach((block, blockTypeIdMap) -> {
             blockTypeIdMap.forEach((blockType, blockId) -> {
-                if(blockType.equals(Magma.BlockType.WALL)) {
+                if(blockType.equals(Friction.BlockType.WALL)) {
                     tag(BlockTags.WALLS).add(blockId.get());
                 }
-                if(blockType.equals(Magma.BlockType.STAIRS)) {
+                if(blockType.equals(Friction.BlockType.STAIRS)) {
                     tag(BlockTags.STAIRS).add(blockId.get());
                 }
             });
+        });
+
+        ModBlocks.MAGMA.forEach((shape, blockId) -> {
+            if(shape.equals(MagmaShape.WALL)) {
+                tag(BlockTags.WALLS).add(blockId.get());
+            }
+            if(shape.equals(MagmaShape.STAIRS)) {
+                tag(BlockTags.STAIRS).add(blockId.get());
+            }
+        });
+
+        ModBlocks.ICE.forEach((shape, blockId) -> {
+            if(shape.equals(IceShape.WALL)) {
+                tag(BlockTags.WALLS).add(blockId.get());
+            }
+            if(shape.equals(IceShape.STAIRS)) {
+                tag(BlockTags.STAIRS).add(blockId.get());
+            }
         });
 
         ModBlocks.CORALS.forEach((modCoral, blockTypeIdMap) -> {

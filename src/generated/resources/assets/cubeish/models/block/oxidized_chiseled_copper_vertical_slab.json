@@ -1,6 +1,0 @@
-{
-  "parent": "cubeish:block/template/vertical_slab/base_all",
-  "textures": {
-    "texture": "minecraft:block/oxidized_chiseled_copper"
-  }
-}

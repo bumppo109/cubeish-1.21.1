@@ -57,7 +57,7 @@ public class CubeishClient {
             });
         });
 
-        ModBlocks.WEATHERING_METALS.forEach(((weathering, weatheringStateMapMap) -> {
+        ModBlocks.WEATHERING_BLOCKS.forEach(((weathering, weatheringStateMapMap) -> {
             weatheringStateMapMap.forEach(((weatheringState, waxingStateMapMap) -> {
                 waxingStateMapMap.forEach((waxingState, extendedShapeIdMap) -> {
                     extendedShapeIdMap.forEach((shape, blockId) -> {

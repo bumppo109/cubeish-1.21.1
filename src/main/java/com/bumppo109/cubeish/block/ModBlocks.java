@@ -27,12 +27,40 @@ public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(Cubeish.MODID);
 
-    public static final Map<Magma, Map<Magma.BlockType, Id<Block>>> MAGMA = Helpers.mapOf(Magma.class, magma ->
-            Arrays.stream(Magma.BlockType.values())
-                    .filter(type -> type.canCreate(magma, type))
+    public static final Map<MagmaShape, Id<Block>> MAGMA =
+            Arrays.stream(MagmaShape.values())
+                    .collect(Collectors.toMap(
+                            Function.identity(),
+                            type -> register(
+                                    "magma_" + type.getSerializedName(),
+                                    type::create,
+                                    block -> new BlockItem(
+                                            block,
+                                            new Item.Properties()
+                                    )
+                            )
+                    ));
+
+    public static final Map<IceShape, Id<Block>> ICE =
+            Arrays.stream(IceShape.values())
+                    .collect(Collectors.toMap(
+                            Function.identity(),
+                            type -> register(
+                                    "ice_" + type.getSerializedName(),
+                                    type::create,
+                                    block -> new BlockItem(
+                                            block,
+                                            new Item.Properties()
+                                    )
+                            )
+                    ));
+
+    public static final Map<Friction, Map<Friction.BlockType, Id<Block>>> FRICTION = Helpers.mapOf(Friction.class, friction ->
+            Arrays.stream(Friction.BlockType.values())
+                    .filter(type -> type.canCreate(friction, type))
                     .collect(Collectors.toMap(
                             type -> type,
-                            type -> register(magma.nameFor(type), createMagma(magma, type), type.createBlockItem(magma, new Item.Properties()))
+                            type -> register(friction.nameFor(type), createFriction(friction, type), type.createBlockItem(friction, new Item.Properties()))
                     ))
     );
 
@@ -47,10 +75,7 @@ public class ModBlocks {
                     )
             );
 
-    public static final Map<
-            ExtendedShapeBlocks,
-            Map<ExtendedShape, Id<Block>>
-            > MISC_BLOCKS =
+    public static final Map<ExtendedShapeBlocks, Map<ExtendedShape, Id<Block>>> MISC_BLOCKS =
             Helpers.mapOf(ExtendedShapeBlocks.class, asset ->
                     Helpers.mapOf(
                             ExtendedShape.class,
@@ -75,50 +100,53 @@ public class ModBlocks {
                                             ))
     );
 
-    public static final Map<
-            Weathering,
-            Map<WeatheringState,
-                    Map<WaxingState,
-                            Map<ExtendedShape, Id<Block>>>>
-            > WEATHERING_METALS =
-            Helpers.mapOf(Weathering.class, metal ->
-                    Helpers.mapOf(WeatheringState.class, state ->
-                            Helpers.mapOf(WaxingState.class, waxing ->
-                                    Helpers.mapOf(
-                                            ExtendedShape.class,
-                                            metal::canCreate,
-                                            shape -> {
-                                                Weathering.WeatheringAsset asset =
-                                                        new Weathering.WeatheringAsset(
-                                                                metal,
-                                                                state,
-                                                                waxing,
-                                                                shape
-                                                        );
-
-                                                return register(
-                                                        Weathering.metalName(metal, state, waxing, shape),
-                                                        () -> shape.create(
-                                                                asset.getBase(),
-                                                                asset.properties()
-                                                        ),
-                                                        block -> shape.createBlockItem(
-                                                                block,
-                                                                new Item.Properties()
-                                                        )
-                                                );
-                                            }
-                                    )
-                            )
-                    )
-            );
-
     public static final Map<Coral, Map<Coral.BlockType, Id<Block>>> CORALS = Helpers.mapOf(Coral.class, coral ->
             Helpers.mapOf(Coral.BlockType.class, type ->
                     register(type.coralName(coral), createCoral(coral, type), type.createBlockItem(coral, new Item.Properties()))
             )
     );
 
+
+    public static final Map<Weathering, Map<WeatheringCopper.WeatherState, Map<WaxingState, Map<WeatheredShape, Id<Block>>>>> WEATHERING_BLOCKS =
+            Helpers.mapOf(Weathering.class, metal ->
+                    Helpers.mapOf(
+                            WeatheringCopper.WeatherState.class,
+                            state ->
+                                    Helpers.mapOf(WaxingState.class, waxing ->
+                                            Helpers.mapOf(
+                                                    WeatheredShape.class,
+                                                    metal::canCreate,
+                                                    shape -> {
+                                                        Weathering.WeatheringAsset asset =
+                                                                new Weathering.WeatheringAsset(
+                                                                        metal,
+                                                                        state,
+                                                                        waxing,
+                                                                        shape
+                                                                );
+
+                                                        return register(
+                                                                Weathering.metalName(
+                                                                        metal,
+                                                                        state,
+                                                                        waxing,
+                                                                        shape
+                                                                ),
+                                                                () -> shape.create(
+                                                                        asset.getBase(),
+                                                                        asset.properties(),
+                                                                        state
+                                                                ),
+                                                                block -> shape.createBlockItem(
+                                                                        block,
+                                                                        new Item.Properties()
+                                                                )
+                                                        );
+                                                    }
+                                            )
+                                    )
+                    )
+            );
 
 
     private static <T extends Block> Id<T> register(String name, Supplier<T> blockSupplier, @Nullable Function<T, ? extends BlockItem> blockItemFactory)
@@ -148,9 +176,9 @@ public class ModBlocks {
         return blockType.create(wood);
     }
 
-    public static Supplier<Block> createMagma(Magma magma, Magma.BlockType blockType)
+    public static Supplier<Block> createFriction(Friction friction, Friction.BlockType blockType)
     {
-        return blockType.create(magma);
+        return blockType.create(friction);
     }
 
     public static Supplier<Block> createCoral(Coral coral, Coral.BlockType blockType)

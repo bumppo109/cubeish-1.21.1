@@ -36,6 +36,15 @@ public final class BlockAssets {
 
         register(Blocks.MAGMA_BLOCK, BlockAsset.cubeAll(
                 ResourceLocation.withDefaultNamespace("block/magma")));
+        register(Blocks.OCHRE_FROGLIGHT, BlockAsset.column(
+                ResourceLocation.withDefaultNamespace("block/ochre_froglight_side"),
+                ResourceLocation.withDefaultNamespace("block/ochre_froglight_top")));
+        register(Blocks.PEARLESCENT_FROGLIGHT, BlockAsset.column(
+                ResourceLocation.withDefaultNamespace("block/pearlescent_froglight_side"),
+                ResourceLocation.withDefaultNamespace("block/pearlescent_froglight_top")));
+        register(Blocks.VERDANT_FROGLIGHT, BlockAsset.column(
+                ResourceLocation.withDefaultNamespace("block/verdant_froglight_side"),
+                ResourceLocation.withDefaultNamespace("block/verdant_froglight_top")));
         register(Blocks.BASALT, BlockAsset.column(
                 ResourceLocation.withDefaultNamespace("block/basalt_side"),
                 ResourceLocation.withDefaultNamespace("block/basalt_top")));
@@ -76,6 +85,10 @@ public final class BlockAssets {
                 ResourceLocation.withDefaultNamespace("block/red_sandstone_top")));
         register(Blocks.SNOW_BLOCK, BlockAsset.cubeAll(
                 ResourceLocation.withDefaultNamespace("block/snow")));
+        register(Blocks.REINFORCED_DEEPSLATE, BlockAsset.cubeBottomTop(
+                ResourceLocation.withDefaultNamespace("block/reinforced_deepslate_side"),
+                ResourceLocation.withDefaultNamespace("block/reinforced_deepslate_bottom"),
+                ResourceLocation.withDefaultNamespace("block/reinforced_deepslate_top")));
         register(Blocks.DIRT_PATH, BlockAsset.cubeBottomTop(
                 ResourceLocation.withDefaultNamespace("block/dirt_path_side"),
                 ResourceLocation.withDefaultNamespace("block/dirt"),
@@ -88,6 +101,10 @@ public final class BlockAssets {
                 ResourceLocation.withDefaultNamespace("block/podzol_side"),
                 ResourceLocation.withDefaultNamespace("block/dirt"),
                 ResourceLocation.withDefaultNamespace("block/podzol_top")));
+        register(Blocks.DRIED_KELP_BLOCK, BlockAsset.cubeBottomTop(
+                ResourceLocation.withDefaultNamespace("block/dried_kelp_side"),
+                ResourceLocation.withDefaultNamespace("block/dried_kelp_bottom"),
+                ResourceLocation.withDefaultNamespace("block/dried_kelp_top")));
         register(Blocks.MYCELIUM, BlockAsset.cubeBottomTop(
                 ResourceLocation.withDefaultNamespace("block/mycelium_side"),
                 ResourceLocation.withDefaultNamespace("block/dirt"),
@@ -95,11 +112,11 @@ public final class BlockAssets {
         register(Blocks.WARPED_NYLIUM, BlockAsset.cubeBottomTop(
                 ResourceLocation.withDefaultNamespace("block/warped_nylium_side"),
                 ResourceLocation.withDefaultNamespace("block/netherrack"),
-                ResourceLocation.withDefaultNamespace("block/warped_nylium_top")));
+                ResourceLocation.withDefaultNamespace("block/warped_nylium")));
         register(Blocks.CRIMSON_NYLIUM, BlockAsset.cubeBottomTop(
                 ResourceLocation.withDefaultNamespace("block/crimson_nylium_side"),
                 ResourceLocation.withDefaultNamespace("block/netherrack"),
-                ResourceLocation.withDefaultNamespace("block/crimson_nylium_top")));
+                ResourceLocation.withDefaultNamespace("block/crimson_nylium")));
         register(Blocks.HAY_BLOCK, BlockAsset.column(
                 ResourceLocation.withDefaultNamespace("block/hay_block_side"),
                 ResourceLocation.withDefaultNamespace("block/hay_block_top")

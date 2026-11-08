@@ -1,6 +1,0 @@
-{
-  "parent": "cubeish:block/template/eighth/bottom_left_all",
-  "textures": {
-    "texture": "minecraft:block/cracked_deepslate_tiles"
-  }
-}

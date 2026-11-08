@@ -1,119 +1,163 @@
+
 package com.bumppo109.cubeish.block.shapes.magma;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraft.util.Mth;
 
 public class ContactDamageHandler {
 
     private static final double EPSILON = 0.001;
 
-    // INTERNAL VOXEL FACE DETECTION
+    /**
+     * Checks all collision-shape surfaces around an entity.
+     * Supports both custom IContactDamage blocks and vanilla magma.
+     */
+    public static void checkContact(Entity entity) {
 
-    public static void applyInternalDamage(
-            BlockState state,
-            Level level,
-            BlockPos pos,
-            Entity entity
-    ) {
-        if (level.isClientSide || !(entity instanceof LivingEntity living)) {
+        if (!(entity.level() instanceof ServerLevel level)
+                || !(entity instanceof LivingEntity living)) {
             return;
         }
 
-        if (!(state.getBlock() instanceof IContactDamage damageBlock)) {
-            return;
-        }
+        AABB entityBox = entity.getBoundingBox();
 
-        VoxelShape collisionShape = state.getCollisionShape(
-                level,
-                pos,
-                CollisionContext.of(entity)
-        );
+        int minX = Mth.floor(entityBox.minX - EPSILON);
+        int minY = Mth.floor(entityBox.minY - EPSILON);
+        int minZ = Mth.floor(entityBox.minZ - EPSILON);
 
-        AABB entityBox = entity.getBoundingBox().move(
-                -pos.getX(),
-                -pos.getY(),
-                -pos.getZ()
-        );
-
-        boolean touching = collisionShape.toAabbs().stream()
-                .anyMatch(box -> box.inflate(EPSILON).intersects(entityBox));
-
-        if (touching) {
-            living.hurt(
-                    level.damageSources().cactus(),
-                    damageBlock.getContactDamage()
-            );
-        }
-    }
-
-    // OUTER BLOCK FACE DETECTION
-
-    public static void checkOuterContact(Entity entity) {
-        if (!(entity.level() instanceof net.minecraft.server.level.ServerLevel level)
-                || !(entity instanceof LivingEntity)) {
-            return;
-        }
-
-        AABB box = entity.getBoundingBox();
-
-        int minX = Mth.floor(box.minX - EPSILON);
-        int minY = Mth.floor(box.minY - EPSILON);
-        int minZ = Mth.floor(box.minZ - EPSILON);
-
-        int maxX = Mth.floor(box.maxX + EPSILON);
-        int maxY = Mth.floor(box.maxY + EPSILON);
-        int maxZ = Mth.floor(box.maxZ + EPSILON);
+        int maxX = Mth.floor(entityBox.maxX + EPSILON);
+        int maxY = Mth.floor(entityBox.maxY + EPSILON);
+        int maxZ = Mth.floor(entityBox.maxZ + EPSILON);
 
         for (BlockPos pos : BlockPos.betweenClosed(
                 minX, minY, minZ,
                 maxX, maxY, maxZ
         )) {
+
             BlockState state = level.getBlockState(pos);
 
-            if (!(state.getBlock() instanceof IContactDamage damageBlock)) {
+            float damage;
+            boolean vanillaMagma = state.is(Blocks.MAGMA_BLOCK);
+
+            if (vanillaMagma) {
+                damage = 1.0F;
+            } else if (state.getBlock() instanceof IContactDamage contactDamage) {
+                damage = contactDamage.getContactDamage();
+            } else {
                 continue;
             }
 
-            if (touchesOuterFace(pos, box)) {
-                ((LivingEntity) entity).hurt(
-                        level.damageSources().cactus(),
-                        damageBlock.getContactDamage()
-                );
+            // Preserve magma's vanilla sneaking protection.
+            if (vanillaMagma && entity.isSteppingCarefully()) {
+                continue;
+            }
+
+            VoxelShape shape = state.getCollisionShape(
+                    level,
+                    pos,
+                    CollisionContext.of(entity)
+            );
+
+            // Convert entity bounding box into block-local coordinates.
+            AABB localEntityBox = entityBox.move(
+                    -pos.getX(),
+                    -pos.getY(),
+                    -pos.getZ()
+            );
+
+            boolean touching = shape.toAabbs().stream()
+                    .anyMatch(shapeBox ->
+                            touchesSurface(shapeBox, localEntityBox)
+                    );
+
+            if (touching) {
+
+                // Vanilla MagmaBlock.stepOn() already handles top contact.
+                if (vanillaMagma && isTouchingTop(pos, entityBox)) {
+                    continue;
+                }
+
+                if (vanillaMagma) {
+                    living.hurt(
+                            level.damageSources().hotFloor(),
+                            damage
+                    );
+                } else {
+                    living.hurt(
+                            level.damageSources().cactus(),
+                            damage
+                    );
+                }
+
+                return;
             }
         }
     }
 
-    private static boolean touchesOuterFace(BlockPos pos, AABB entityBox) {
-        AABB blockBox = new AABB(pos);
+    private static boolean isTouchingTop(BlockPos pos, AABB entityBox) {
 
-        boolean west = Math.abs(entityBox.maxX - blockBox.minX) <= EPSILON;
-        boolean east = Math.abs(entityBox.minX - blockBox.maxX) <= EPSILON;
+        double topY = pos.getY() + 1.0;
 
-        boolean north = Math.abs(entityBox.maxZ - blockBox.minZ) <= EPSILON;
-        boolean south = Math.abs(entityBox.minZ - blockBox.maxZ) <= EPSILON;
+        return Math.abs(entityBox.minY - topY) <= EPSILON
+                && entityBox.maxX > pos.getX()
+                && entityBox.minX < pos.getX() + 1.0
+                && entityBox.maxZ > pos.getZ()
+                && entityBox.minZ < pos.getZ() + 1.0;
+    }
 
-        boolean down = Math.abs(entityBox.maxY - blockBox.minY) <= EPSILON;
-        boolean up = Math.abs(entityBox.minY - blockBox.maxY) <= EPSILON;
+    /**
+     * Detects contact with any of the six surfaces of a collision AABB.
+     *
+     * A collision AABB can represent an external face of a block
+     * or an internal face of a custom voxel shape.
+     */
+    private static boolean touchesSurface(
+            AABB shape,
+            AABB entity
+    ) {
+
+        boolean west =
+                Math.abs(entity.maxX - shape.minX) <= EPSILON;
+
+        boolean east =
+                Math.abs(entity.minX - shape.maxX) <= EPSILON;
+
+        boolean north =
+                Math.abs(entity.maxZ - shape.minZ) <= EPSILON;
+
+        boolean south =
+                Math.abs(entity.minZ - shape.maxZ) <= EPSILON;
+
+        boolean down =
+                Math.abs(entity.maxY - shape.minY) <= EPSILON;
+
+        boolean up =
+                Math.abs(entity.minY - shape.maxY) <= EPSILON;
 
         return
-                ((west || east)
-                        && overlaps(entityBox.minY, entityBox.maxY, blockBox.minY, blockBox.maxY)
-                        && overlaps(entityBox.minZ, entityBox.maxZ, blockBox.minZ, blockBox.maxZ))
+                (west || east)
+                        && overlaps(entity.minY, entity.maxY, shape.minY, shape.maxY)
+                        && overlaps(entity.minZ, entity.maxZ, shape.minZ, shape.maxZ)
+
                         ||
-                        ((north || south)
-                                && overlaps(entityBox.minX, entityBox.maxX, blockBox.minX, blockBox.maxX)
-                                && overlaps(entityBox.minY, entityBox.maxY, blockBox.minY, blockBox.maxY))
+
+                        (north || south)
+                                && overlaps(entity.minX, entity.maxX, shape.minX, shape.maxX)
+                                && overlaps(entity.minY, entity.maxY, shape.minY, shape.maxY)
+
                         ||
-                        ((up || down)
-                                && overlaps(entityBox.minX, entityBox.maxX, blockBox.minX, blockBox.maxX)
-                                && overlaps(entityBox.minZ, entityBox.maxZ, blockBox.minZ, blockBox.maxZ));
+
+                        (up || down)
+                                && overlaps(entity.minX, entity.maxX, shape.minX, shape.maxX)
+                                && overlaps(entity.minZ, entity.maxZ, shape.minZ, shape.maxZ);
     }
 
     private static boolean overlaps(

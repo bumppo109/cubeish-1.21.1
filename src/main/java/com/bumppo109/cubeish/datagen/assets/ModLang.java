@@ -1,6 +1,8 @@
 package com.bumppo109.cubeish.datagen.assets;
 
 import com.bumppo109.cubeish.Cubeish;
+import com.bumppo109.cubeish.assetdata.BlockAssets;
+import com.bumppo109.cubeish.assetdata.BlockTextureSlot;
 import com.bumppo109.cubeish.block.ModBlocks;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -33,10 +35,18 @@ public class ModLang extends LanguageProvider {
             });
         });
 
-        ModBlocks.MAGMA.forEach((block, blockTypeIdMap) -> {
-            blockTypeIdMap.forEach((blockType, blockId) -> {
+        ModBlocks.FRICTION.forEach((block, blockIdMap) -> {
+            blockIdMap.forEach(((blockType, blockId) -> {
                 add(blockId.get());
-            });
+            }));
+        });
+
+        ModBlocks.MAGMA.forEach((blockType, blockId) -> {
+            add(blockId.get());
+        });
+
+        ModBlocks.ICE.forEach((blockType, blockId) -> {
+            add(blockId.get());
         });
 
         ModBlocks.WOODS.forEach((modWood, blockTypeIdMap) -> {
@@ -45,7 +55,7 @@ public class ModLang extends LanguageProvider {
             });
         });
 
-        ModBlocks.WEATHERING_METALS.forEach((metal, weatheringStateMap) -> {
+        ModBlocks.WEATHERING_BLOCKS.forEach((metal, weatheringStateMap) -> {
             weatheringStateMap.forEach((weatheringState, waxMap) -> {
                 waxMap.forEach((waxingState, shapeIdMap) -> {
                     shapeIdMap.forEach(((extendedShape, blockId) -> {

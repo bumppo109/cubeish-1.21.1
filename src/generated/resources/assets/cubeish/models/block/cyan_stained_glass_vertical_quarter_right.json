@@ -1,6 +1,0 @@
-{
-  "parent": "cubeish:block/template/vertical_quarter/right_all",
-  "textures": {
-    "texture": "minecraft:block/cyan_stained_glass"
-  }
-}

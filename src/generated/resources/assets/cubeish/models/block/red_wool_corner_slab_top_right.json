@@ -1,6 +1,0 @@
-{
-  "parent": "cubeish:block/template/corner_slab/top_right_all",
-  "textures": {
-    "texture": "minecraft:block/red_wool"
-  }
-}

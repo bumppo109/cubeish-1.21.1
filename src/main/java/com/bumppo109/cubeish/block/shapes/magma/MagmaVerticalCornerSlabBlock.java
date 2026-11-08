@@ -14,18 +14,6 @@ public class MagmaVerticalCornerSlabBlock extends VerticalCornerSlabBlock implem
     }
 
     @Override
-    protected void entityInside(
-            BlockState state,
-            Level level,
-            BlockPos pos,
-            Entity entity
-    ) {
-        ContactDamageHandler.applyInternalDamage(
-                state, level, pos, entity
-        );
-    }
-
-    @Override
     public float getContactDamage() {
         return 1.0F;
     }

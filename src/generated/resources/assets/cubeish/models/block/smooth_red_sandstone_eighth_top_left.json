@@ -1,6 +1,0 @@
-{
-  "parent": "cubeish:block/template/eighth/top_left_all",
-  "textures": {
-    "texture": "minecraft:block/red_sandstone_top"
-  }
-}

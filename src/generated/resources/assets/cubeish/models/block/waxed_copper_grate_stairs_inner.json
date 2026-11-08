@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "minecraft:block/copper_grate",
-    "side": "minecraft:block/copper_grate",
-    "top": "minecraft:block/copper_grate"
-  }
-}

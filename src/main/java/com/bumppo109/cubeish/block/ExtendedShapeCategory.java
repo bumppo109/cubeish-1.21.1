@@ -4,6 +4,7 @@ import java.util.Locale;
 
 public enum ExtendedShapeCategory {
     ALL(true, true, true, true, true, true, true, true, true, true),
+    WOOD(true, true, false, true, true, true, true, true, true, true),
     CARVED(true, false, false, true, true, true, false, false, true, false),
     LANDSCAPE(true, false, false, false, false, false, false, false, false, false)
     ;

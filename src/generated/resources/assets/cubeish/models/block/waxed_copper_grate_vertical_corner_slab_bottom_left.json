@@ -1,6 +1,0 @@
-{
-  "parent": "cubeish:block/template/vertical_corner_slab/bottom_left_all",
-  "textures": {
-    "texture": "minecraft:block/copper_grate"
-  }
-}
